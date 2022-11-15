@@ -1,7 +1,14 @@
 # Exp-6-Synchornous-counters - up counter and down counter 
 ### AIM: To implement 4 bit up and down counters and validate  functionality.
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
+### HARDWARE REQUIRED:  – 
+1.PC
+
+2.Cyclone II 
+
+3.USB flasher
+
+### SOFTWARE REQUIRED:   
+1.Quartus prime
 ### THEORY 
 
 ## UP COUNTER 
@@ -46,43 +53,90 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
+1.Create a new project in QuartusII software.
+
+2.Name the project as uc for upcounter and dc for down counter.
+
+3.Create a new verilog hdl file in the project file.
+
+4.Name the module as dc and uc for down counter and up counter.
+
+5.Within the module declare input and output variables.
+
+6.Create a loop using if-else with condition parameter as reset value.
+
+7.End the loop.
+
+8.End the module.
 
 
 
 ### PROGRAM 
-/*
+
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
 
+Developed by:mitta.yashaswi
 
+RegisterNumber:212221230062  
 
+## 4bit up counter
 
+module uc(input CLK, input reset,output[0:3]counter);
 
+reg[0:3]counter_up;
+
+always@(posedge CLK or posedge reset)
+
+begin
+
+if(reset
+
+counter_up <=4'd0;
+
+else
+
+counter_up <=counter_up+4'd1;
+
+end
+
+assign counter = counter_up;
+
+endmodule
+
+## 4bit down counter
+
+module dc(input CLK,input reset, output[0:3]counter);
+
+reg[0:3]counter_down;
+
+always@(posedge CLK or posedge reset)
+
+begin
+
+if(reset)
+
+counter_down <= 4'd0;
+
+else
+
+counter_down<=counter_down-4'd1;
+
+end
+
+assign counter = counter_down;
+
+endmodule
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+![image](https://user-images.githubusercontent.com/94619247/201994928-886a3320-b6b6-4ce2-b7a7-b9d3f5b742eb.png)
+![image](https://user-images.githubusercontent.com/94619247/201996315-95954129-31a8-481d-abf0-a07c557ff7b2.png)
 
 
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
-
-
-
-
+### TIMING DIGRAMS FOR COUNTER 
+![image](https://user-images.githubusercontent.com/94619247/201995067-6bee1ad1-06dc-41e4-90f9-8668d94d2d1a.png)
 
 ### TRUTH TABLE 
-
-
-
-
-
+![image](https://user-images.githubusercontent.com/94619247/201995106-9d17df88-3916-49b9-9041-16d12f4653ee.png)
 
 ### RESULTS 
+The 4 bit up and down counters has been implemented and validated the functionality.
